@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Backend Internship Roadmap — 10 Month Plan</title>
+  <meta name="description" content="Track your 10-month journey to a ₹20k+ remote backend internship" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    /* ============================================================
+       RESET & BASE
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:          #080810;
+      --bg-card:     #0f0f1a;
+      --bg-card2:    #141420;
+      --border:      rgba(255,255,255,0.07);
+      --border-h:    rgba(255,255,255,0.13);
+      --text:        #dde4f0;
+      --text-sub:    #8892a4;
+      --text-muted:  #4b5567;
+      --green:       #22c55e;
+      --yellow:      #eab308;
+      --blue:        #3b82f6;
+      --purple:      #a855f7;
+      --red:         #ef4444;
+      --orange:      #f97316;
+      --radius:      18px;
+      --radius-sm:   10px;
+      --shadow:      0 4px 32px rgba(0,0,0,0.55);
+      --shadow-sm:   0 2px 12px rgba(0,0,0,0.3);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    /* subtle dot-grid background */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 28px 28px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ============================================================
+       STICKY HEADER
+    ============================================================ */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      background: rgba(8,8,16,0.88);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      border-bottom: 1px solid var(--border);
+      padding: 18px 48px 16px;
+    }
+
+    .header-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .goal-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 99px;
+      padding: 3px 10px;
+      margin-bottom: 8px;
+    }
+
+    .goal-title {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      color: #fff;
+      margin-bottom: 14px;
+      background: linear-gradient(135deg, #fff 30%, #8892a4 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .overall-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .overall-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    .overall-bar {
+      flex: 1;
+      height: 7px;
+      background: rgba(255,255,255,0.07);
+      border-radius: 99px;
+      overflow: hidden;
+    }
+
+    .overall-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--green), var(--blue), var(--purple));
+      border-radius: 99px;
+      transition: width 0.7s cubic-bezier(0.4,0,0.2,1);
+      position: relative;
+    }
+
+    .overall-fill::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent 60%, rgba(255,255,255,0.25));
+      border-radius: inherit;
+    }
+
+    .overall-pct {
+      font-size: 13px;
+      font-weight: 800;
+      color: #fff;
+      min-width: 40px;
+      text-align: right;
+    }
+
+    /* ============================================================
+       MAIN LAYOUT
+    ============================================================ */
+    .main {
+      position: relative;
+      z-index: 1;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 44px 32px 80px;
+    }
+
+    /* ============================================================
+       SECTION HEADINGS
+    ============================================================ */
+    .sec-heading {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      margin-top: 52px;
+    }
+
+    .sec-heading:first-of-type { margin-top: 0; }
+
+    .sec-heading span { font-size: 17px; }
+
+    .sec-heading::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ============================================================
+       LEVELS GRID
+    ============================================================ */
+    .levels-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    @media (max-width: 1100px) { .levels-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 680px)  { .levels-grid { grid-template-columns: 1fr; } }
+
+    /* ============================================================
+       LEVEL CARD
+    ============================================================ */
+    .level-card {
+      position: relative;
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .level-card:not(.lv-locked):hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+    }
+
+    .lv-locked {
+      opacity: 0.45;
+      pointer-events: none;
+    }
+
+    .lv-accent { height: 3px; width: 100%; }
+
+    .lv-body { padding: 22px 22px 20px; }
+
+    .lv-head {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .lv-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+
+    .lv-meta { flex: 1; min-width: 0; }
+
+    .lv-num {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1px;
+    }
+
+    .lv-name {
+      font-size: 17px;
+      font-weight: 800;
+      letter-spacing: -0.2px;
+      line-height: 1.2;
+    }
+
+    .lv-period {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .lv-pct {
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: -1px;
+      align-self: center;
+      flex-shrink: 0;
+    }
+
+    .lv-bar {
+      height: 5px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 99px;
+      overflow: hidden;
+      margin-bottom: 18px;
+    }
+
+    .lv-bar-fill {
+      height: 100%;
+      border-radius: 99px;
+      transition: width 0.6s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    /* ============================================================
+       CHECKLIST
+    ============================================================ */
+    .checklist { display: flex; flex-direction: column; gap: 1px; }
+
+    .chk-item, .sub-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 8px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.15s ease;
+      user-select: none;
+    }
+
+    .chk-item:hover, .sub-item:hover { background: rgba(255,255,255,0.04); }
+
+    .cb-box {
+      width: 18px;
+      height: 18px;
+      border-radius: 5px;
+      border: 2px solid rgba(255,255,255,0.18);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.18s ease;
+      position: relative;
+    }
+
+    .cb-box.is-checked { border-width: 0; }
+
+    .chk-label {
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--text);
+      flex: 1;
+      transition: color 0.15s;
+    }
+
+    .chk-label.struck {
+      color: var(--text-muted);
+      text-decoration: line-through;
+      text-decoration-color: var(--text-muted);
+    }
+
+    .sub-group { margin-top: 6px; }
+
+    .sub-group-hdr {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 8px 3px;
+    }
+
+    .sub-group-title {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text-sub);
+    }
+
+    .sub-items { margin-left: 10px; }
+
+    .sub-item .cb-box {
+      width: 15px;
+      height: 15px;
+      border-radius: 4px;
+    }
+
+    .sub-item .chk-label {
+      font-size: 12.5px;
+      font-weight: 400;
+      color: var(--text-sub);
+    }
+
+    /* ============================================================
+       NUMERIC TRACKER (inside level card)
+    ============================================================ */
+    .num-tracker {
+      margin-top: 14px;
+      padding: 13px 14px;
+      background: rgba(255,255,255,0.025);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+
+    .num-hdr {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 9px;
+      gap: 8px;
+    }
+
+    .num-lbl { font-size: 12px; font-weight: 500; color: var(--text-sub); flex: 1; }
+
+    .num-count { font-size: 12px; font-weight: 800; }
+
+    .num-input-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 9px;
+    }
+
+    .num-input {
+      width: 72px;
+      padding: 5px 8px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      text-align: center;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      -moz-appearance: textfield;
+    }
+
+    .num-input::-webkit-outer-spin-button,
+    .num-input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+
+    .num-input:focus {
+      border-color: rgba(255,255,255,0.28);
+      box-shadow: 0 0 0 3px rgba(255,255,255,0.04);
+    }
+
+    .num-target { font-size: 13px; color: var(--text-muted); font-weight: 500; }
+
+    .num-done-badge {
+      font-size: 13px;
+      margin-left: 4px;
+      animation: popIn 0.3s cubic-bezier(0.34,1.56,0.64,1);
+    }
+
+    @keyframes popIn {
+      from { transform: scale(0.6); opacity: 0; }
+      to   { transform: scale(1); opacity: 1; }
+    }
+
+    .num-bar {
+      height: 4px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 99px;
+      overflow: hidden;
+    }
+
+    .num-bar-fill {
+      height: 100%;
+      border-radius: 99px;
+      transition: width 0.4s ease;
+    }
+
+    /* ============================================================
+       LOCK OVERLAY
+    ============================================================ */
+    .lock-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border-radius: var(--radius);
+      background: rgba(8,8,16,0.55);
+      backdrop-filter: blur(3px);
+    }
+
+    .lock-icon { font-size: 30px; }
+
+    .lock-lbl {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-align: center;
+      max-width: 160px;
+      line-height: 1.4;
+    }
+
+    /* ============================================================
+       TRACKER PANELS
+    ============================================================ */
+    .tracker-panel {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 26px 28px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .tracker-panel-hdr {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .panel-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .panel-subtitle { font-size: 12px; font-weight: 500; color: var(--text-muted); }
+
+    .streak-badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 14px;
+      background: rgba(249,115,22,0.12);
+      border: 1px solid rgba(249,115,22,0.28);
+      border-radius: 99px;
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--orange);
+      white-space: nowrap;
+    }
+
+    /* Daily grid */
+    .daily-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    @media (max-width: 520px) { .daily-grid { grid-template-columns: 1fr; } }
+
+    .daily-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 13px 15px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background 0.18s, border-color 0.18s, transform 0.15s;
+      user-select: none;
+    }
+
+    .daily-item:hover { background: rgba(255,255,255,0.055); border-color: var(--border-h); }
+    .daily-item:active { transform: scale(0.98); }
+
+    .daily-item.is-done {
+      background: rgba(34,197,94,0.08);
+      border-color: rgba(34,197,94,0.28);
+    }
+
+    .daily-label { font-size: 13.5px; font-weight: 600; color: var(--text); }
+
+    /* Weekly grid */
+    .weekly-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 14px;
+    }
+
+    .weekly-item {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 15px 16px;
+    }
+
+    .weekly-lbl {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .weekly-input-row { display: flex; align-items: center; gap: 7px; }
+
+    .weekly-input {
+      width: 58px;
+      padding: 6px 8px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+      text-align: center;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      -moz-appearance: textfield;
+    }
+
+    .weekly-input::-webkit-outer-spin-button,
+    .weekly-input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+
+    .weekly-input:focus {
+      border-color: rgba(255,255,255,0.28);
+      box-shadow: 0 0 0 3px rgba(255,255,255,0.04);
+    }
+
+    .weekly-tgt { font-size: 12px; color: var(--text-muted); font-weight: 600; }
+
+    .weekly-note {
+      font-size: 10.5px;
+      color: var(--text-muted);
+      margin-top: 7px;
+      font-style: italic;
+      line-height: 1.5;
+    }
+
+    /* ============================================================
+       SCROLLBAR
+    ============================================================ */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 99px; }
+    ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.18); }
+  </style>
+</head>
+<body>
+
+<!-- ============================================================
+     STICKY HEADER
+============================================================ -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="goal-chip">🎯 10-Month Plan</div>
+    <div class="goal-title">Get a ₹20k+ remote backend internship by the end of 1st year</div>
+    <div class="overall-row">
+      <span class="overall-label">Overall Progress</span>
+      <div class="overall-bar">
+        <div class="overall-fill" id="overall-fill" style="width:0%"></div>
+      </div>
+      <span class="overall-pct" id="overall-pct">0%</span>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================
+     MAIN
+============================================================ -->
+<main class="main">
+
+  <div class="sec-heading"><span>📍</span> Roadmap Levels</div>
+  <div class="levels-grid" id="levels-grid"></div>
+
+  <div class="sec-heading"><span>📅</span> Daily Tracker</div>
+  <div class="tracker-panel">
+    <div class="tracker-panel-hdr">
+      <div>
+        <div class="panel-title">Today's Tasks</div>
+        <div class="panel-subtitle" id="today-date-lbl"></div>
+      </div>
+      <div class="streak-badge">🔥 <span id="streak-num">0</span>&nbsp;day streak</div>
+    </div>
+    <div class="daily-grid" id="daily-grid"></div>
+  </div>
+
+  <div class="sec-heading"><span>📊</span> Weekly Tracker</div>
+  <div class="tracker-panel">
+    <div class="tracker-panel-hdr">
+      <div>
+        <div class="panel-title">This Week's Progress</div>
+        <div class="panel-subtitle" id="week-lbl"></div>
+      </div>
+    </div>
+    <div class="weekly-grid" id="weekly-grid"></div>
+  </div>
+
+</main>
+
+<!-- ============================================================
+     JAVASCRIPT
+============================================================ -->
+<script>
+/* ================================================================
+   DATA DEFINITIONS
+================================================================ */
+
+const LEVELS = [
+  {
+    id: 1, title: 'Python', period: 'September',
+    color: '#22c55e', bg: 'rgba(34,197,94,0.12)', emoji: '\uD83D\uDC0D',
+    items: [
+      { id: 'python_basics', label: 'Python basics',  type: 'chk' },
+      { id: 'functions',     label: 'Functions',       type: 'chk' },
+      { id: 'oop',           label: 'OOP',             type: 'chk' },
+      { id: 'file_handling', label: 'File Handling',   type: 'chk' },
+      { id: 'git_github',    label: 'Git & GitHub',    type: 'chk' },
+      { id: 'mini_projects', label: 'Build 3 mini projects', type: 'group',
+        children: [
+          { id: 'mini_p1', label: 'Project 1' },
+          { id: 'mini_p2', label: 'Project 2' },
+          { id: 'mini_p3', label: 'Project 3' },
+        ]
+      },
+    ]
+  },
+  {
+    id: 2, title: 'DSA', period: 'Oct \u2013 Nov',
+    color: '#eab308', bg: 'rgba(234,179,8,0.12)', emoji: '\uD83E\uDDE0',
+    items: [
+      { id: 'arrays',    label: 'Arrays',        type: 'chk' },
+      { id: 'strings',   label: 'Strings',       type: 'chk' },
+      { id: 'hash_maps', label: 'Hash Maps',     type: 'chk' },
+      { id: 'stk_queue', label: 'Stack & Queue', type: 'chk' },
+      { id: 'recursion', label: 'Recursion',     type: 'chk' },
+      { id: 'leetcode',  label: 'Solve 100 LeetCode problems', type: 'num', target: 100 },
+    ]
+  },
+  {
+    id: 3, title: 'Backend', period: 'Dec \u2013 Feb',
+    color: '#3b82f6', bg: 'rgba(59,130,246,0.12)', emoji: '\u2699\uFE0F',
+    items: [
+      { id: 'html_css',       label: 'HTML & CSS basics', type: 'chk' },
+      { id: 'sql',            label: 'SQL',               type: 'chk' },
+      { id: 'fastapi',        label: 'FastAPI',           type: 'chk' },
+      { id: 'rest_apis',      label: 'REST APIs',         type: 'chk' },
+      { id: 'authentication', label: 'Authentication',    type: 'chk' },
+      { id: 'postgresql',     label: 'PostgreSQL',        type: 'chk' },
+      { id: 'be_projects', label: 'Build 4 backend projects', type: 'group',
+        children: [
+          { id: 'be_p1', label: 'Project 1' },
+          { id: 'be_p2', label: 'Project 2' },
+          { id: 'be_p3', label: 'Project 3' },
+          { id: 'be_p4', label: 'Project 4' },
+        ]
+      },
+    ]
+  },
+  {
+    id: 4, title: 'Internship Ready', period: 'Mar \u2013 May',
+    color: '#a855f7', bg: 'rgba(168,85,247,0.12)', emoji: '\uD83D\uDE80',
+    items: [
+      { id: 'docker',       label: 'Docker basics',    type: 'chk' },
+      { id: 'testing',      label: 'Testing basics',   type: 'chk' },
+      { id: 'deploy',       label: 'Deploy projects',  type: 'chk' },
+      { id: 'resume',       label: 'Resume',           type: 'chk' },
+      { id: 'linkedin',     label: 'LinkedIn',         type: 'chk' },
+      { id: 'gh_portfolio', label: 'GitHub portfolio', type: 'chk' },
+      { id: 'internships',  label: 'Apply to 100+ internships', type: 'num', target: 100 },
+    ]
+  },
+  {
+    id: 5, title: 'AI / ML', period: 'After Internship',
+    color: '#ef4444', bg: 'rgba(239,68,68,0.12)', emoji: '\uD83E\uDD16',
+    items: [
+      { id: 'numpy',      label: 'NumPy',                   type: 'chk' },
+      { id: 'pandas',     label: 'Pandas',                  type: 'chk' },
+      { id: 'matplotlib', label: 'Matplotlib',              type: 'chk' },
+      { id: 'sklearn',    label: 'Scikit-learn',            type: 'chk' },
+      { id: 'ml_basics',  label: 'Machine Learning basics', type: 'chk' },
+    ]
+  },
+];
+
+const DAILY_TASKS = [
+  { id: 'learn',    label: 'Learn (1 hr)',         emoji: '\uD83D\uDCDA' },
+  { id: 'dsa',      label: 'DSA (1 hr)',            emoji: '\uD83E\uDDE0' },
+  { id: 'project',  label: 'Project (1 hr)',        emoji: '\uD83D\uDEE0\uFE0F' },
+  { id: 'revision', label: 'Revision (30\u201360 min)', emoji: '\uD83D\uDD01' },
+];
+
+/*
+  WEEKLY TRACKER — LeetCode NOTE:
+  "weekly_lc" tracks how many LeetCode problems were solved THIS WEEK (resets every Monday).
+  Level 2's "leetcode" input tracks the CUMULATIVE total solved toward the 100-problem goal.
+  They are intentionally stored separately; editing one does NOT change the other.
+*/
+const WEEKLY_FIELDS = [
+  { id: 'python_lessons', label: 'Python Lessons',  target: null, note: '' },
+  { id: 'weekly_lc',      label: 'LeetCode Solved', target: 100,
+    note: 'Weekly count \u2014 separate from cumulative Level 2 total' },
+  { id: 'projects_built', label: 'Projects Built',  target: 7,   note: '' },
+  { id: 'gh_commits',     label: 'GitHub Commits',  target: 7,   note: '' },
+  { id: 'study_days',     label: 'Study Days',      target: 7,   note: '' },
+];
+
+/* ================================================================
+   STORAGE
+================================================================ */
+
+const LS_KEY = 'roadmap_v1';
+
+function loadState() {
+  try { return JSON.parse(localStorage.getItem(LS_KEY) || '{}'); }
+  catch { return {}; }
+}
+
+function saveState(st) {
+  try { localStorage.setItem(LS_KEY, JSON.stringify(st)); }
+  catch (e) { console.warn('localStorage save failed', e); }
+}
+
+let STATE = loadState();
+
+function deepGet(obj, path, def) {
+  const keys = path.split('.');
+  let cur = obj;
+  for (const k of keys) {
+    if (cur == null || typeof cur !== 'object') return def;
+    cur = cur[k];
+  }
+  return (cur !== undefined && cur !== null) ? cur : def;
+}
+
+function deepSet(obj, path, val) {
+  const keys = path.split('.');
+  let cur = obj;
+  for (let i = 0; i < keys.length - 1; i++) {
+    if (!cur[keys[i]] || typeof cur[keys[i]] !== 'object') cur[keys[i]] = {};
+    cur = cur[keys[i]];
+  }
+  cur[keys[keys.length - 1]] = val;
+}
+
+function get(path, def) { return deepGet(STATE, path, def); }
+
+function set(path, val) {
+  deepSet(STATE, path, val);
+  saveState(STATE);
+}
+
+/* ================================================================
+   DATE HELPERS
+================================================================ */
+
+function todayKey() {
+  const d = new Date();
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+  return y + '-' + m + '-' + day;
+}
+
+function isoWeekKey() {
+  const d = new Date();
+  const jan4 = new Date(d.getFullYear(), 0, 4);
+  const wn = Math.ceil(((d - jan4) / 86400000 + ((jan4.getDay() + 6) % 7) + 1) / 7);
+  return d.getFullYear() + '-W' + String(wn).padStart(2, '0');
+}
+
+function fmtDate(d) {
+  return d.toLocaleDateString('en-IN', {
+    weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+  });
+}
+
+function dateToKey(d) {
+  return d.getFullYear() + '-' +
+    String(d.getMonth() + 1).padStart(2, '0') + '-' +
+    String(d.getDate()).padStart(2, '0');
+}
+
+function dayMinus(d, n) {
+  const r = new Date(d);
+  r.setDate(r.getDate() - n);
+  return r;
+}
+
+/* ================================================================
+   PROGRESS CALCULATIONS
+================================================================ */
+
+function flatItems(lv) {
+  const out = [];
+  for (const item of lv.items) {
+    if (item.type === 'chk') {
+      out.push({ id: item.id, type: 'chk' });
+    } else if (item.type === 'group') {
+      for (const c of item.children) out.push({ id: c.id, type: 'chk' });
+    } else if (item.type === 'num') {
+      out.push({ id: item.id, type: 'num', target: item.target });
+    }
+  }
+  return out;
+}
+
+function levelProgress(lvId) {
+  const lv = LEVELS.find(l => l.id === lvId);
+  const items = flatItems(lv);
+  let done = 0;
+  for (const it of items) {
+    if (it.type === 'chk') {
+      if (get('levels.' + lvId + '.chk.' + it.id, false) === true) done++;
+    } else {
+      const v = parseInt(get('levels.' + lvId + '.num.' + it.id, 0)) || 0;
+      if (v >= it.target) done++;
+    }
+  }
+  return items.length === 0 ? 0 : Math.round((done / items.length) * 100);
+}
+
+function overallProgress() {
+  let total = 0, done = 0;
+  for (const lv of LEVELS) {
+    const items = flatItems(lv);
+    total += items.length;
+    for (const it of items) {
+      if (it.type === 'chk') {
+        if (get('levels.' + lv.id + '.chk.' + it.id, false) === true) done++;
+      } else {
+        const v = parseInt(get('levels.' + lv.id + '.num.' + it.id, 0)) || 0;
+        if (v >= it.target) done++;
+      }
+    }
+  }
+  return total === 0 ? 0 : Math.round((done / total) * 100);
+}
+
+function isUnlocked(lvId) {
+  if (lvId === 1) return true;
+  return levelProgress(lvId - 1) >= 100;
+}
+
+/* ================================================================
+   STREAK
+================================================================ */
+
+function calcStreak() {
+  const days = get('streak_days', {});
+  let streak = 0;
+  let d = dayMinus(new Date(), 1);
+  while (streak <= 3650) {
+    const k = dateToKey(d);
+    if (days[k] === true) { streak++; d = dayMinus(d, 1); }
+    else break;
+  }
+  return streak;
+}
+
+function refreshStreakDay() {
+  const today = todayKey();
+  const dailyData = get('daily.' + today, {});
+  const allDone = DAILY_TASKS.every(t => dailyData[t.id] === true);
+  const days = get('streak_days', {});
+  if (allDone) days[today] = true;
+  else delete days[today];
+  set('streak_days', days);
+}
+
+/* ================================================================
+   SVG TICK
+================================================================ */
+
+function tick(size) {
+  const s = size || 10;
+  return '<svg width="' + s + '" height="' + Math.round(s * 0.8) + '" viewBox="0 0 10 8" fill="none">' +
+    '<path d="M1 3.8L3.6 6.4L9 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>' +
+    '</svg>';
+}
+
+/* ================================================================
+   RENDER LEVELS
+================================================================ */
+
+function renderLevels() {
+  const grid = document.getElementById('levels-grid');
+  grid.innerHTML = '';
+  for (const lv of LEVELS) {
+    const pct = levelProgress(lv.id);
+    const unlocked = isUnlocked(lv.id);
+    grid.appendChild(buildCard(lv, pct, unlocked));
+  }
+  updateOverall();
+}
+
+function buildCard(lv, pct, unlocked) {
+  const wrap = document.createElement('div');
+  wrap.className = 'level-card' + (unlocked ? '' : ' lv-locked');
+  wrap.id = 'lv-card-' + lv.id;
+  if (unlocked) wrap.style.borderColor = lv.color + '44';
+
+  const gradStyle = unlocked
+    ? 'background:linear-gradient(90deg,' + lv.color + ',' + lv.color + '77)'
+    : 'background:rgba(255,255,255,0.06)';
+
+  let itemsHTML = '';
+  for (const item of lv.items) {
+    if (item.type === 'chk') {
+      const checked = unlocked && get('levels.' + lv.id + '.chk.' + item.id, false) === true;
+      itemsHTML += chkRowHTML(item.id, item.label, checked, lv.id, lv.color, unlocked);
+    } else if (item.type === 'group') {
+      itemsHTML += groupHTML(item, lv.id, lv.color, unlocked);
+    } else if (item.type === 'num') {
+      const val = parseInt(get('levels.' + lv.id + '.num.' + item.id, 0)) || 0;
+      itemsHTML += numHTML(item, val, lv.id, lv.color, unlocked);
+    }
+  }
+
+  wrap.innerHTML =
+    '<div class="lv-accent" style="' + gradStyle + '"></div>' +
+    '<div class="lv-body">' +
+      '<div class="lv-head">' +
+        '<div class="lv-icon" style="background:' + (unlocked ? lv.bg : 'rgba(255,255,255,0.04)') + '">' +
+          lv.emoji +
+        '</div>' +
+        '<div class="lv-meta">' +
+          '<div class="lv-num">Level ' + lv.id + '</div>' +
+          '<div class="lv-name" style="color:' + (unlocked ? lv.color : 'var(--text-muted)') + '">' + lv.title + '</div>' +
+          '<div class="lv-period">' + lv.period + '</div>' +
+        '</div>' +
+        '<div class="lv-pct" style="color:' + (unlocked ? lv.color : 'var(--text-muted)') + '">' + pct + '%</div>' +
+      '</div>' +
+      '<div class="lv-bar">' +
+        '<div class="lv-bar-fill" style="width:' + pct + '%;background:' + (unlocked ? lv.color : 'rgba(255,255,255,0.12)') + '"></div>' +
+      '</div>' +
+      '<div class="checklist">' + itemsHTML + '</div>' +
+    '</div>' +
+    (!unlocked
+      ? '<div class="lock-overlay">' +
+          '<div class="lock-icon">\uD83D\uDD12</div>' +
+          '<div class="lock-lbl">Complete Level ' + (lv.id - 1) + ' to unlock</div>' +
+        '</div>'
+      : '');
+
+  if (unlocked) attachCardListeners(wrap, lv);
+  return wrap;
+}
+
+function cbBoxHTML(checked, color) {
+  const style = checked
+    ? 'background:' + color + ';border-color:' + color + ';'
+    : '';
+  return '<div class="cb-box' + (checked ? ' is-checked' : '') + '" style="' + style + '">' +
+    (checked ? tick() : '') +
+  '</div>';
+}
+
+function chkRowHTML(id, label, checked, lvId, color, unlocked) {
+  return '<div class="chk-item" data-lvid="' + lvId + '" data-id="' + id + '" data-action="chk"' +
+    ' style="cursor:' + (unlocked ? 'pointer' : 'default') + '">' +
+    cbBoxHTML(checked, color) +
+    '<span class="chk-label' + (checked ? ' struck' : '') + '">' + label + '</span>' +
+  '</div>';
+}
+
+function groupHTML(item, lvId, color, unlocked) {
+  const childRows = item.children.map(function(c) {
+    const checked = unlocked && get('levels.' + lvId + '.chk.' + c.id, false) === true;
+    const bStyle = checked ? 'background:' + color + ';border-color:' + color + ';' : '';
+    return '<div class="sub-item" data-lvid="' + lvId + '" data-id="' + c.id + '" data-action="chk"' +
+      ' style="cursor:' + (unlocked ? 'pointer' : 'default') + '">' +
+      '<div class="cb-box' + (checked ? ' is-checked' : '') + '" style="width:15px;height:15px;border-radius:4px;' + bStyle + '">' +
+        (checked ? '<svg width="9" height="7" viewBox="0 0 10 8" fill="none"><path d="M1 3.8L3.6 6.4L9 1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>' : '') +
+      '</div>' +
+      '<span class="chk-label' + (checked ? ' struck' : '') + '" style="font-size:12.5px;font-weight:400;color:var(--text-sub)">' + c.label + '</span>' +
+    '</div>';
+  }).join('');
+
+  return '<div class="sub-group">' +
+    '<div class="sub-group-hdr">' +
+      '<span style="font-size:13px;color:' + (unlocked ? color : 'var(--text-muted)') + '">\uD83D\uDCC1</span>' +
+      '<span class="sub-group-title">' + item.label + '</span>' +
+    '</div>' +
+    '<div class="sub-items">' + childRows + '</div>' +
+  '</div>';
+}
+
+function numHTML(item, val, lvId, color, unlocked) {
+  const pct = Math.min(100, Math.round((val / item.target) * 100));
+  const done = val >= item.target;
+  return '<div class="num-tracker">' +
+    '<div class="num-hdr">' +
+      '<span class="num-lbl">' + item.label + '</span>' +
+      '<span class="num-count" style="color:' + (done ? color : 'var(--text)') + '">' + val + ' / ' + item.target + '</span>' +
+    '</div>' +
+    '<div class="num-input-row">' +
+      '<input class="num-input" type="number" min="0" max="' + (item.target * 10) + '"' +
+        ' value="' + val + '"' +
+        ' id="num-' + lvId + '-' + item.id + '"' +
+        ' data-lvid="' + lvId + '" data-id="' + item.id + '" data-action="num"' +
+        (unlocked ? '' : ' disabled') + '>' +
+      '<span class="num-target">/ ' + item.target + '</span>' +
+      (done ? '<span class="num-done-badge">\u2705</span>' : '') +
+    '</div>' +
+    '<div class="num-bar">' +
+      '<div class="num-bar-fill" style="width:' + pct + '%;background:' + (unlocked ? color : 'rgba(255,255,255,0.1)') + '"></div>' +
+    '</div>' +
+  '</div>';
+}
+
+function attachCardListeners(card, lv) {
+  card.querySelectorAll('[data-action="chk"]').forEach(function(el) {
+    el.addEventListener('click', function() {
+      var lvId = parseInt(el.dataset.lvid);
+      var id   = el.dataset.id;
+      var cur  = get('levels.' + lvId + '.chk.' + id, false);
+      set('levels.' + lvId + '.chk.' + id, !cur);
+      renderLevels();
+    });
+  });
+
+  card.querySelectorAll('[data-action="num"]').forEach(function(el) {
+    el.addEventListener('input', function() {
+      var lvId = parseInt(el.dataset.lvid);
+      var id   = el.dataset.id;
+      var val  = Math.max(0, parseInt(el.value) || 0);
+      set('levels.' + lvId + '.num.' + id, val);
+      renderLevels();
+    });
+  });
+}
+
+function updateOverall() {
+  var pct = overallProgress();
+  document.getElementById('overall-fill').style.width = pct + '%';
+  document.getElementById('overall-pct').textContent  = pct + '%';
+}
+
+/* ================================================================
+   DAILY TRACKER
+================================================================ */
+
+function renderDaily() {
+  var today = todayKey();
+  document.getElementById('today-date-lbl').textContent = fmtDate(new Date());
+  document.getElementById('streak-num').textContent = calcStreak();
+
+  var grid = document.getElementById('daily-grid');
+  grid.innerHTML = DAILY_TASKS.map(function(task) {
+    var checked = get('daily.' + today + '.' + task.id, false) === true;
+    var bStyle = checked ? 'background:var(--green);border-color:var(--green);' : '';
+    return '<div class="daily-item' + (checked ? ' is-done' : '') + '"' +
+      ' id="daily-' + task.id + '" data-task="' + task.id + '">' +
+      '<div class="cb-box' + (checked ? ' is-checked' : '') + '" style="' + bStyle + '">' +
+        (checked ? tick() : '') +
+      '</div>' +
+      '<span class="daily-label">' + task.emoji + ' ' + task.label + '</span>' +
+    '</div>';
+  }).join('');
+
+  grid.querySelectorAll('.daily-item').forEach(function(el) {
+    el.addEventListener('click', function() {
+      var taskId = el.dataset.task;
+      var cur = get('daily.' + today + '.' + taskId, false);
+      set('daily.' + today + '.' + taskId, !cur);
+      refreshStreakDay();
+      renderDaily();
+    });
+  });
+}
+
+/* ================================================================
+   WEEKLY TRACKER
+================================================================ */
+
+function renderWeekly() {
+  var wk = isoWeekKey();
+  document.getElementById('week-lbl').textContent = 'ISO Week ' + wk + '  \u00B7  resets each Monday';
+
+  var grid = document.getElementById('weekly-grid');
+  grid.innerHTML = WEEKLY_FIELDS.map(function(f) {
+    var val = parseInt(get('weekly.' + wk + '.' + f.id, 0)) || 0;
+    var tgtTxt = f.target ? '/ ' + f.target : '(count)';
+    return '<div class="weekly-item">' +
+      '<div class="weekly-lbl">' + f.label + '</div>' +
+      '<div class="weekly-input-row">' +
+        '<input class="weekly-input" type="number" min="0"' +
+          ' value="' + val + '"' +
+          ' id="wk-' + f.id + '" data-field="' + f.id + '">' +
+        '<span class="weekly-tgt">' + tgtTxt + '</span>' +
+      '</div>' +
+      (f.note ? '<div class="weekly-note">\u2139\uFE0F ' + f.note + '</div>' : '') +
+    '</div>';
+  }).join('');
+
+  grid.querySelectorAll('.weekly-input').forEach(function(el) {
+    el.addEventListener('input', function() {
+      var fId = el.dataset.field;
+      var val = Math.max(0, parseInt(el.value) || 0);
+      set('weekly.' + wk + '.' + fId, val);
+    });
+  });
+}
+
+/* ================================================================
+   INIT
+================================================================ */
+
+function init() {
+  renderLevels();
+  renderDaily();
+  renderWeekly();
+}
+
+init();
+</script>
+</body>
+</html>
